@@ -10,6 +10,7 @@ public class PracticaApplication {
 		SpringApplication.run(PracticaApplication.class, args);
 		
 		System.out.println("shkfk");
+		System.out.println("Holii putos");
 	}
 
 }
