@@ -8,6 +8,8 @@ public class PracticaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PracticaApplication.class, args);
+		
+		System.out.println("shkfk");
 	}
 
 }
