@@ -10,29 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.models.entity.ParroquiaD;
-import com.example.demo.models.services.IParroquiaServiceD;
+import com.example.demo.models.entity.CantonD;
+import com.example.demo.models.services.ICantonServiceD;
 
 @RestController
 @RequestMapping("/api")
-public class ParroquiaRestControllerD {
+public class CantonRestControllerD {
 
-	private IParroquiaServiceD parroquiaService;
+	private ICantonServiceD cantonService;
 	
-	//ListarParroquias
-	@GetMapping("/parroquia")
-	public List<ParroquiaD> index(){
+	//ListarParroquia
+	@GetMapping("/canton")
+	public List<CantonD> index(){
 		
-		return parroquiaService.findAll();
+		return cantonService.findAll();
 	}
 	
-	//CrearParroquias
-	@PostMapping("/parroquia")
+	//CrearParroquia
+	@PostMapping("/canton")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ParroquiaD create(@RequestBody ParroquiaD parroquia) {
+	public CantonD create(@RequestBody CantonD canton) {
 		
-		return parroquiaService.save(parroquia);
+		return cantonService.save(canton);
 	}
-	
-	
 }

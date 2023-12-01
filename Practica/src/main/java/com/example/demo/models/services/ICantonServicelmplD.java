@@ -3,29 +3,27 @@ package com.example.demo.models.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.models.dao.IParroquiaDaoD;
 import com.example.demo.models.entity.ParroquiaD;
 
-@Service
-public class ParroquiaServicelmplD implements IParroquiaServiceD{
+public class ICantonServicelmplD implements IParroquiaServiceD{
 
 	@Autowired
-	private IParroquiaDaoD parroquiaDao;
+	IParroquiaDaoD parroquiaD;
 	
 	@Override
-	@Transactional(readOnly=true)
+	@Transactional(readOnly = true)
 	public List<ParroquiaD> findAll() {
 		// TODO Auto-generated method stub
-		return (List<ParroquiaD>) parroquiaDao.findAll();
+		return (List<ParroquiaD>) parroquiaD.findAll();
 	}
 
 	@Override
 	public ParroquiaD save(ParroquiaD parroquia) {
 		// TODO Auto-generated method stub
-		return parroquiaDao.save(parroquia);
+		return parroquiaD.save(parroquia);
 	}
 
 }
