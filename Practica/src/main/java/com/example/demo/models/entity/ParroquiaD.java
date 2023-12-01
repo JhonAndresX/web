@@ -22,20 +22,26 @@ public class ParroquiaD implements Serializable{
 	private Long id;
 	
 	private String nombreParroquia;
-
+	private Long id_CantonFk;
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getNombreParroquia() {
 		return nombreParroquia;
 	}
-
 	public void setNombreParroquia(String nombreParroquia) {
 		this.nombreParroquia = nombreParroquia;
 	}
+	public Long getId_CantonFk() {
+		return id_CantonFk;
+	}
+	public void setId_CantonFk(Long id_CantonFk) {
+		this.id_CantonFk = id_CantonFk;
+	}
+	
+	
 }
