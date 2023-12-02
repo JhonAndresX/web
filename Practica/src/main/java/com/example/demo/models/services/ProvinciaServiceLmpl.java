@@ -23,6 +23,24 @@ public class ProvinciaServiceLmpl implements IProvinciaService{
 		// TODO Auto-generated method stub
 		return (List<ProvinciaJ>) provinciaDao.findAll();
 	}
+
+	@Override
+	public List<ProvinciaJ> save(ProvinciaJ provincias) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ProvinciaJ> findById(Long id_provincia) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id_provincia) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
