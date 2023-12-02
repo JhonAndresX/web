@@ -13,34 +13,41 @@ import com.example.demo.models.entity.ProvinciaJ;
 
 @Service
 public class ProvinciaServiceLmpl implements IProvinciaService{
-	
+
 	@Autowired
-	private IProvinciaDao provinciaDao;	
+	private IProvinciaDao provinciaDao;
 	
 	@Override
-	@Transactional (readOnly = true)
+	@Transactional(readOnly = true)
 	public List<ProvinciaJ> findAll() {
 		// TODO Auto-generated method stub
-		return (List<ProvinciaJ>) provinciaDao.findAll();
+		return (List<ProvinciaJ>) provinciaDao;
 	}
 
 	@Override
-	public List<ProvinciaJ> save(ProvinciaJ provincias) {
+	@Transactional
+	public ProvinciaJ save(ProvinciaJ provincias) {
 		// TODO Auto-generated method stub
-		return null;
+		return provinciaDao.save(provincias);
 	}
 
 	@Override
-	public List<ProvinciaJ> findById(Long id_provincia) {
+	@Transactional(readOnly = true)
+	public ProvinciaJ findById(Long id_provincia) {
 		// TODO Auto-generated method stub
-		return null;
+		return provinciaDao.findById(id_provincia).orElse(null);
 	}
 
 	@Override
+	@Transactional
 	public void delete(Long id_provincia) {
 		// TODO Auto-generated method stub
-		
+		provinciaDao.deleteById(id_provincia);
 	}
+	
+
+
+
 	
 	
 
