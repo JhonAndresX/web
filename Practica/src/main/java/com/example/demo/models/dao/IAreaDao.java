@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.demo.models.entity.AreaJ;
 
-interface IAreaDaoJ extends CrudRepository<AreaJ, Long>{
-	
+public interface IAreaDao extends CrudRepository<AreaJ, Long>{
+
 }
