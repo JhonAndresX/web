@@ -27,7 +27,7 @@ public class CantonD implements Serializable{
 	private Long id;
 	
 	private String nomnbreCanton;
-	private String id_provincia;
+	private Long id_provincia;
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name="id_CantonFk")
@@ -49,11 +49,11 @@ public class CantonD implements Serializable{
 		this.nomnbreCanton = nomnbreCanton;
 	}
 
-	public String getId_provincia() {
+	public Long getId_provincia() {
 		return id_provincia;
 	}
 
-	public void setId_provincia(String id_provincia) {
+	public void setId_provincia(Long id_provincia) {
 		this.id_provincia = id_provincia;
 	}
 
