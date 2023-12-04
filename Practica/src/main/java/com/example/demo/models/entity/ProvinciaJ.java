@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 	@Entity
@@ -24,12 +23,8 @@ public class ProvinciaJ implements Serializable{
 	private Long id_provincia;
 	private String nombre_provincia;
 	
-	/*@PrePersist
-	public void prePersist() {
-		createat = new Date();
-	}*/
 
-	////////// Getters Setters\\\\\\\\\\\
+	////////// Getters Setters fuck\\\\\\\\\\\
 
 	public Long getId_provincia() {
 		return id_provincia;
