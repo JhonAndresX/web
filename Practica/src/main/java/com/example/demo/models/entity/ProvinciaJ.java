@@ -32,7 +32,6 @@ public class ProvinciaJ implements Serializable{
 	@JoinColumn(name="id_provincia")
 	private List<CantonD> listCanton;
 
-	////////// Getters Setters fuck\\\\\\\\\\\
 
 	public Long getId_provincia() {
 		return id_provincia;
@@ -49,6 +48,15 @@ public class ProvinciaJ implements Serializable{
 	public void setNombre_provincia(String nombre_provincia) {
 		this.nombre_provincia = nombre_provincia;
 	}
+
+	public List<CantonD> getListCanton() {
+		return listCanton;
+	}
+
+	public void setListCanton(List<CantonD> listCanton) {
+		this.listCanton = listCanton;
+	}
+	
 				
 }
 

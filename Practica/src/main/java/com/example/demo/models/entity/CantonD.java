@@ -12,9 +12,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "canton")
+@Table(name="canton", uniqueConstraints = {@UniqueConstraint(columnNames = {"id_provincia", "nomnbrecanton"})})
 public class CantonD implements Serializable{
 
 	/**
