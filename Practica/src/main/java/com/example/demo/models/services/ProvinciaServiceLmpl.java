@@ -21,7 +21,7 @@ public class ProvinciaServiceLmpl implements IProvinciaService{
 	@Transactional(readOnly = true)
 	public List<ProvinciaJ> findAll() {
 		// TODO Auto-generated method stub
-		return (List<ProvinciaJ>) provinciaDao;
+		return (List<ProvinciaJ>) provinciaDao.findAll();
 	}
 
 	@Override
