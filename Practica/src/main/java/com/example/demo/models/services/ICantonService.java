@@ -4,10 +4,13 @@ import java.util.List;
 
 import com.example.demo.models.entity.CantonD;
 
-public interface ICantonServiceD {
-	
-	public List<CantonD> findAll();
+public interface ICantonService {
+
+public List<CantonD> findAll();
 	
 	public CantonD save (CantonD canton);
-
+	
+	public CantonD findById(Long id);
+	
+	public void delete (Long id);
 }

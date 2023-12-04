@@ -13,25 +13,22 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-	@Entity
-	@Table (name = "provincias")
-public class ProvinciaJ implements Serializable{
+@Entity
+@Table(name = "provincias")
+public class ProvinciaJ implements Serializable {
 
-	/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long id_provincia;
 	private String nombre_provincia;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name="id_provincia")
+	@JoinColumn(name = "id_provinciaFK")
+	
 	private List<CantonD> listCanton;
-
 
 	public Long getId_provincia() {
 		return id_provincia;
@@ -56,8 +53,7 @@ public class ProvinciaJ implements Serializable{
 	public void setListCanton(List<CantonD> listCanton) {
 		this.listCanton = listCanton;
 	}
+
 	
-				
+
 }
-
-
