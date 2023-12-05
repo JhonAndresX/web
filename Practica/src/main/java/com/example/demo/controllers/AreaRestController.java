@@ -29,7 +29,7 @@ public class AreaRestController {
 		return areaService.findAll();
 	}
 
-	@GetMapping("/tablaArea/{idAreaPk}")
+	@GetMapping("/tablaarea/{idAreaPk}")
 	public AreaJ show(@PathVariable Long idAreaPk) {
 		return areaService.findById(idAreaPk);
 	}
