@@ -24,7 +24,7 @@ public class AreaRestController {
 	@Autowired
 	private IAreaServiceJ areaService;
 	
-	@GetMapping("/tablaArea")
+	@GetMapping("/tablaarea")
 	public List<AreaJ> indext(){
 		return areaService.findAll();
 	}
@@ -34,13 +34,13 @@ public class AreaRestController {
 		return areaService.findById(idAreaPk);
 	}
 
-	@PostMapping("/tablaArea")
+	@PostMapping("/tablaarea")
 	@ResponseStatus(HttpStatus.CREATED)
 	public AreaJ create(@RequestBody AreaJ area) {
 		return areaService.save(area);
 	}
 	
-	@PutMapping("/tablaArea")
+	@PutMapping("/tablaarea")
 	public AreaJ update(@RequestBody AreaJ area, @PathVariable Long idAreaPk) {
 		
 		AreaJ areaActual = areaService.findById(idAreaPk);
@@ -50,7 +50,7 @@ public class AreaRestController {
 		
 	}
 	
-	@DeleteMapping("/tablaArea/{idAreaPk}")
+	@DeleteMapping("/tablaarea/{idAreaPk}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long idAreaPk) {
 		areaService.delete(idAreaPk);

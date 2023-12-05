@@ -2,17 +2,22 @@ package com.example.demo.models.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "historiasclinicas")
@@ -35,6 +40,10 @@ public class HistoriasClinicas implements Serializable {
 			  fecha_nacimiento = new Date();
 			}
 		
+		@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+		@JoinColumn(name = "cedula_NroHistoriaClinicaFK")
+		private List<RegistroParteDiario> registroDiario;
+		  
 		public String getCedula() {
 			return cedula;
 		}
