@@ -21,6 +21,7 @@ public class UnidadOperativa implements Serializable{
 		private Long id;
 		private String nombre_unidad_operativa;
 		private Long id_areaFK;
+		
 		public Long getId() {
 			return id;
 		}
