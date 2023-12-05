@@ -9,4 +9,8 @@ public interface IParroquiaServiceD {
 	public List<ParroquiaD> findAll();
 	
 	public ParroquiaD save(ParroquiaD parroquia);
+	
+	public ParroquiaD findById(Long id);
+	
+	public void delete(Long id);
 }
