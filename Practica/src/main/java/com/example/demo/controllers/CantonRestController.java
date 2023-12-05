@@ -47,6 +47,7 @@ public class CantonRestController {
 		CantonD cantonactual = cantonService.findById(id);
 
 		cantonactual.setNombre_canton(canton.getNombre_canton());
+		cantonactual.setId_provinciaFK(canton.getId_provinciaFK());
 
 		return cantonService.save(cantonactual);
 

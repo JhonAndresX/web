@@ -40,7 +40,7 @@ public class AreaRestController {
 		return areaService.save(area);
 	}
 	
-	@PutMapping("/tablaarea")
+	@PutMapping("/tablaarea/{idAreaPk}")
 	public AreaJ update(@RequestBody AreaJ area, @PathVariable Long idAreaPk) {
 		
 		AreaJ areaActual = areaService.findById(idAreaPk);

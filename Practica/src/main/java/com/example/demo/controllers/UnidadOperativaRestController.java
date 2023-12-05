@@ -25,24 +25,24 @@ import com.example.demo.models.services.IUnidadOpeService;
 			@Autowired
 			private IUnidadOpeService UnidadService;
 			
-			@GetMapping("/UnidadOperativa")
+			@GetMapping("/unidad_operativa")
 			public List<UnidadOperativa> indext(){
 				return UnidadService.findAll();
 			}
 			
-			@GetMapping("/UnidadOperativa/{id}")
+			@GetMapping("/unidad_operativa/{id}")
 			public UnidadOperativa show(@PathVariable Long id) {
 				return UnidadService.findById(id);
 			}
 			
-			@PostMapping("/UnidadOperativa")
+			@PostMapping("/unidad_operativa")
 			@ResponseStatus(HttpStatus.CREATED)
 			public UnidadOperativa create(@RequestBody UnidadOperativa unidad) {
 				
 				return UnidadService.save(unidad);
 			}
 			
-			@PutMapping("/UnidadOperativa/{id}")
+			@PutMapping("/unidad_operativa/{id}")
 			public UnidadOperativa update(@RequestBody UnidadOperativa unidad, @PathVariable Long id) {
 				
 				UnidadOperativa unidadactual = UnidadService.findById(id);
@@ -53,7 +53,7 @@ import com.example.demo.models.services.IUnidadOpeService;
 				
 			}	
 				
-				@DeleteMapping("/UnidadOperativa/{id}")
+				@DeleteMapping("/unidad_operativa/{id}")
 				@ResponseStatus(HttpStatus.NO_CONTENT)
 				public void delete(@PathVariable Long id) {
 					

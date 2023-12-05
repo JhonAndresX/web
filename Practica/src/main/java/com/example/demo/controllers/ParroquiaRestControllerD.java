@@ -47,7 +47,7 @@ public class ParroquiaRestControllerD {
 	}
 	
 	//EdiarParroquia
-	@PutMapping("/parroquia")
+	@PutMapping("/parroquia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ParroquiaD update(@RequestBody ParroquiaD parroquia, @PathVariable Long id) {
 		
