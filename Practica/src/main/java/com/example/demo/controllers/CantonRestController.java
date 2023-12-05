@@ -21,44 +21,41 @@ import com.example.demo.models.services.ICantonService;
 @RequestMapping("/api")
 public class CantonRestController {
 
+	@Autowired
+	private ICantonService cantonService;
 
-		@Autowired
-		private ICantonService cantonService;
-		
-		@GetMapping("/canton")
-		public List<CantonD> indext(){
-			return cantonService.findAll();
-		}
-		
-		@GetMapping("/canton/{id}")
-		public CantonD show(@PathVariable Long id) {
-			return cantonService.findById(id);
-		}
-		
-		@PostMapping("/canton")
-		@ResponseStatus(HttpStatus.CREATED)
-		public CantonD create(@RequestBody CantonD canton) {
-			
-			return cantonService.save(canton);
-		}
-		
-		@PutMapping("/canton/{id}")
-		public CantonD update(@RequestBody CantonD canton, @PathVariable Long id) {
-			
-			CantonD cantonactual = cantonService.findById(id);
-			
-			cantonactual.setNombre_canton(canton.getNombre_canton());
-			
-			return cantonService.save(cantonactual);
-			
-		}	
-			
-			@DeleteMapping("/canton/{id}")
-			@ResponseStatus(HttpStatus.NO_CONTENT)
-			public void delete(@PathVariable Long id) {
-				
-				cantonService.delete(id);
-			}
+	@GetMapping("/canton")
+	public List<CantonD> indext() {
+		return cantonService.findAll();
+	}
+
+	@GetMapping("/canton/{id}")
+	public CantonD show(@PathVariable Long id) {
+		return cantonService.findById(id);
+	}
+
+	@PostMapping("/canton")
+	@ResponseStatus(HttpStatus.CREATED)
+	public CantonD create(@RequestBody CantonD canton) {
+
+		return cantonService.save(canton);
+	}
+
+	@PutMapping("/canton/{id}")
+	public CantonD update(@RequestBody CantonD canton, @PathVariable Long id) {
+
+		CantonD cantonactual = cantonService.findById(id);
+
+		cantonactual.setNombre_canton(canton.getNombre_canton());
+
+		return cantonService.save(cantonactual);
+
+	}
+
+	@DeleteMapping("/canton/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+
+		cantonService.delete(id);
+	}
 }
-
-
