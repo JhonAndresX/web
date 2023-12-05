@@ -1,11 +1,16 @@
 package com.example.demo.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
@@ -20,6 +25,10 @@ public class CantonD implements Serializable{
 	private Long id;
 	private String nombre_canton;
 	private Long id_provinciaFK;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_CantonFk")
+	private List<ParroquiaD> listaParroquia;
 	
 	public Long getId() {
 		return id;
@@ -39,8 +48,6 @@ public class CantonD implements Serializable{
 	public void setId_provinciaFK(Long id_provinciaFK) {
 		this.id_provinciaFK = id_provinciaFK;
 	}
-	
-
 	
 
 
