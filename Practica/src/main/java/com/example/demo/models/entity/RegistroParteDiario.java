@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="registro_parte_diario", uniqueConstraints = {@UniqueConstraint(columnNames = {"codigo", "cedula_NroHistoriaClinicaFK", "numero_visita"})})
+@Table(name="registro_parte_diario", uniqueConstraints = {@UniqueConstraint(columnNames = {"codigo", "cedula", "numero_visita"})})
 public class RegistroParteDiario implements Serializable{
 
 	/**
@@ -29,7 +29,8 @@ public class RegistroParteDiario implements Serializable{
 	private Long id;
 	
 	@Column(length =10)
-	private String cedula_NroHistoriaClinicaFK;
+	private String cedula;
+	
 	private Date fecha_registro;
 	private Long codigo;
 	private int numero_visita;
@@ -43,10 +44,10 @@ public class RegistroParteDiario implements Serializable{
 		this.id = id;
 	}
 	public String getCedula_NroHistoriaClinicaFK() {
-		return cedula_NroHistoriaClinicaFK;
+		return cedula;
 	}
 	public void setCedula_NroHistoriaClinicaFK(String cedula_NroHistoriaClinicaFK) {
-		this.cedula_NroHistoriaClinicaFK = cedula_NroHistoriaClinicaFK;
+		this.cedula = cedula_NroHistoriaClinicaFK;
 	}
 	public Date getFecha_registro() {
 		return fecha_registro;

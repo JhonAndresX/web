@@ -28,6 +28,7 @@ public class HistoriasClinicas implements Serializable {
 		@Id
 		@Column(length =10)
 		private String cedula;
+		
 		private String nombre_paciente;
 		private String apellido_paciente;
 		
@@ -35,13 +36,8 @@ public class HistoriasClinicas implements Serializable {
 		@Temporal(TemporalType.DATE)
 		private Date fecha_nacimiento;
 		
-		  @PrePersist
-			public void prePersist() {
-			  fecha_nacimiento = new Date();
-			}
-		
 		@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-		@JoinColumn(name = "cedula_NroHistoriaClinicaFK")
+		@JoinColumn(name = "cedula")
 		private List<RegistroParteDiario> registroDiario;
 		  
 		public String getCedula() {
