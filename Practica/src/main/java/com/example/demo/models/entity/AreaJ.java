@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table (name = "tablaarea", uniqueConstraints = {@UniqueConstraint(columnNames = {"idParroquiaFk", "nombrearea"})})
+@Table (name = "tablaArea", uniqueConstraints = {@UniqueConstraint(columnNames = {"idParroquiaFk", "nombrearea"})})
 public class AreaJ implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
