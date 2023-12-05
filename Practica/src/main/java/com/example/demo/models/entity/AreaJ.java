@@ -1,37 +1,25 @@
 package com.example.demo.models.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
-
-//	- The value for annotation attribute Table.uniqueConstraints must be some @jakarta.persistence.UniqueConstraint annotation
-
-
 @Entity
-@Table (name = "tablaArea", uniqueConstraints = {@UniqueConstraint(columnNames = {"idParroquiaFk", "nombreArea"})})
+@Table (name = "tablaarea", uniqueConstraints = {@UniqueConstraint(columnNames = {"idParroquiaFk", "nombrearea"})})
 public class AreaJ implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAreaPk;
 	private Long idParroquiaFk;
-	private String nombreArea;
+	private String nombrearea;
 	
 	//////// Getter Setter\\\\\\\\\\\
 	public Long getIdAreaPk() {
@@ -50,12 +38,12 @@ public class AreaJ implements Serializable{
 		this.idParroquiaFk = idParroquiaFk;
 	}
 
-	public String getNombreArea() {
-		return nombreArea;
+	public String getNombrearea() {
+		return nombrearea;
 	}
 
-	public void setNombreArea(String nombreArea) {
-		this.nombreArea = nombreArea;
+	public void setNombrearea(String nombrearea) {
+		this.nombrearea = nombrearea;
 	}
 
 }
