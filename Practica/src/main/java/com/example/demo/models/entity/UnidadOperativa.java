@@ -1,11 +1,16 @@
 package com.example.demo.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
@@ -21,6 +26,10 @@ public class UnidadOperativa implements Serializable{
 		private Long id;
 		private String nombre_unidad_operativa;
 		private Long id_areaFK;
+		
+		@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+		@JoinColumn(name = "codigo")
+		List<RegistroParteDiario> registroParteDiario;
 		
 		public Long getId() {
 			return id;

@@ -3,14 +3,19 @@ package com.example.demo.models.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="registro_parte_diario")
+@Table(name="registro_parte_diario", uniqueConstraints = {@UniqueConstraint(columnNames = {"codigo", "cedula_NroHistoriaClinicaFK", "numero_visita"})})
 public class RegistroParteDiario implements Serializable{
 
 	/**
