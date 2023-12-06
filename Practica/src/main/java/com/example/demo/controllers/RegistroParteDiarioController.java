@@ -48,7 +48,7 @@ public class RegistroParteDiarioController {
 	}
 	
 	//Editar
-	@PutMapping("/registro_parte_diario")
+	@PutMapping("/registro_parte_diario/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public RegistroParteDiario update(@RequestBody RegistroParteDiario registro, @PathVariable Long id) {
 		
@@ -57,6 +57,7 @@ public class RegistroParteDiarioController {
 		registros.setFecha_registro(registro.getFecha_registro());
 		registros.setPeso_paciente(registro.getPeso_paciente());
 		registros.setTalla_paciente(registro.getTalla_paciente());
+		registros.setCedula(registro.getCedula());
 		
 		return registroService.save(registros);
 	}

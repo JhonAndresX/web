@@ -43,11 +43,11 @@ public class RegistroParteDiario implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getCedula_NroHistoriaClinicaFK() {
+	public String getCedula() {
 		return cedula;
 	}
-	public void setCedula_NroHistoriaClinicaFK(String cedula_NroHistoriaClinicaFK) {
-		this.cedula = cedula_NroHistoriaClinicaFK;
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
 	}
 	public Date getFecha_registro() {
 		return fecha_registro;
