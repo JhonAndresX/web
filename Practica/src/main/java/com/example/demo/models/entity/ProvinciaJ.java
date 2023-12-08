@@ -46,14 +46,6 @@ public class ProvinciaJ implements Serializable {
 		this.nombre_provincia = nombre_provincia;
 	}
 
-	public List<CantonD> getListCanton() {
-		return listCanton;
-	}
-
-	public void setListCanton(List<CantonD> listCanton) {
-		this.listCanton = listCanton;
-	}
-
 	
 
 }
